@@ -24,6 +24,7 @@
 		8273B5302668FDF000717D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8273B52E2668FDF000717D50 /* Main.storyboard */; };
 		8273B5322668FDF200717D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8273B5312668FDF200717D50 /* Assets.xcassets */; };
 		8273B5352668FDF200717D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8273B5332668FDF200717D50 /* LaunchScreen.storyboard */; };
+		B5E0B56A2680E2E900EDEE0A /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E0B5692680E2E900EDEE0A /* Pair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		8273B53B2668FDF200717D50 /* ios.stage-taskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios.stage-taskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8273B5412668FDF200717D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8273B55F2668FEE600717D50 /* ios.stage-task.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios.stage-task.xctestplan"; sourceTree = "<group>"; };
+		B5E0B5692680E2E900EDEE0A /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				821822CF267B4F7800F55DC7 /* CoronaClass.md */,
 				821822D0267B4F7800F55DC7 /* CoronaClass.swift */,
+				B5E0B5692680E2E900EDEE0A /* Pair.swift */,
 			);
 			path = "Exercise-1";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				821822D2267B4F7800F55DC7 /* CoronaClass.swift in Sources */,
 				821822D9267B4F7F00F55DC7 /* Card.swift in Sources */,
+				B5E0B56A2680E2E900EDEE0A /* Pair.swift in Sources */,
 				821822D8267B4F7F00F55DC7 /* Game.swift in Sources */,
 				8273B52D2668FDF000717D50 /* ViewController.swift in Sources */,
 				821822DC267B4F7F00F55DC7 /* Deck.swift in Sources */,

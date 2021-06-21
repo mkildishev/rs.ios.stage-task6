@@ -29,19 +29,13 @@ extension CoronaClass {
     
     func findPosition() -> Pair {
         
-        if self.seats.isEmpty {
+        if !seats.contains(0) {
             return Pair(first: 0, second: 0, pos: 0)
         }
-        if self.seats.count == 1 {
-            return Pair(first: 0, second: (self.seatsCapacity - 1) * 2, pos: 1)
+        if !seats.contains(seatsCapacity - 1) {
+            return Pair(first: 0, second: (seatsCapacity - 1) * 2, pos: seats.count)
         }
-        if !self.seats.contains(0) {
-            return Pair(first: 0, second: 0, pos: 0)
-        }
-        if !self.seats.contains(self.seatsCapacity - 1) {
-            return Pair(first: 0, second: (self.seatsCapacity - 1) * 2, pos: self.seats.count)
-        }
-        for i in 1...self.seats.count - 1 {
+        for i in 1...seats.count - 1 {
             if (seats[i-1] + 1 != seats[i]) {
                 seatPairs.append(Pair(first: seats[i-1], second: seats[i], pos: i))
             }

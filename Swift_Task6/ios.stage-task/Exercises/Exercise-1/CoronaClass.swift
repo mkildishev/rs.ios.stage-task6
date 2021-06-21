@@ -4,8 +4,6 @@ class CoronaClass {
     
      var seats = [Int]()
     
-     var seatPairs = [Pair]()
-    
      let seatsCapacity: Int
 
      init(n: Int) {
@@ -13,7 +11,6 @@ class CoronaClass {
      }
      
      func seat() -> Int {
-        seatPairs.removeAll()
         let elem = self.findPosition()
         seats.insert(elem.candidate, at: elem.pos)
         return elem.candidate
@@ -28,22 +25,32 @@ class CoronaClass {
 extension CoronaClass {
     
     func findPosition() -> Pair {
-        
+        var candidatePair = Pair(first: 0, second: 0, pos: 0)
         if !seats.contains(0) {
-            return Pair(first: 0, second: 0, pos: 0)
-        }
-        if !seats.contains(seatsCapacity - 1) {
-            return Pair(first: 0, second: (seatsCapacity - 1) * 2, pos: seats.count)
-        }
-        for i in 1...seats.count - 1 {
-            if (seats[i-1] + 1 != seats[i]) {
-                seatPairs.append(Pair(first: seats[i-1], second: seats[i], pos: i))
+            let firstElem = seats.first ?? 0
+            let newPair = Pair(first: -firstElem, second: firstElem, pos: 0)
+            if (newPair.prior > candidatePair.prior) {
+                candidatePair = newPair
+            }
+        } else if !seats.contains(seatsCapacity - 1) {
+            let lastElem = seats.last!
+            let newPair = Pair(first: lastElem, second: (seatsCapacity - 1) * 2 - lastElem , pos: seats.count)
+            if (newPair.prior > candidatePair.prior) {
+                candidatePair = newPair
             }
         }
-        seatPairs.sort() {
-            $0.prior > $1.prior
+        if (seats.isEmpty || seats.count - 1 == 0) {
+            return candidatePair
         }
-        return seatPairs[0]
+        for i in 1...seats.count - 1 {
+            let newPair = Pair(first: seats[i-1], second: seats[i], pos: i)
+            if (newPair.prior > candidatePair.prior) {
+                candidatePair = newPair
+            }
+        }
+        
+
+        return candidatePair
     }
     
 }

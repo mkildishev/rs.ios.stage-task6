@@ -15,6 +15,6 @@ struct Pair: Hashable {
         (second + first) / 2
     }
     var prior: Int {
-        candidate - first < second - candidate ? candidate - first : second - candidate
+        (second - first) / 2
     }
 }
